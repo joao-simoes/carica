@@ -13,8 +13,7 @@ var scrapeFromUrlAndSelector = async function(URL, SELECTOR) {
         PARSING
         URL: ${URL}
         SELECTOR: ${SELECTOR}
-        -----
-        `)
+        -----`.trim())
 
         var data = { "preco": "NA" }
 
@@ -24,7 +23,7 @@ var scrapeFromUrlAndSelector = async function(URL, SELECTOR) {
 
         // parse from the selector
         await page.goto(URL)
-        var element = await page.waitFor(SELECTOR)
+        var element = await page.waitForSelector(SELECTOR)
         var text = await page.evaluate(element => element.textContent, element)
         browser.close()
 
@@ -33,9 +32,9 @@ var scrapeFromUrlAndSelector = async function(URL, SELECTOR) {
 
         console.log(`
         RETURNED: ${JSON.stringify(data)}
-        ----------`)
+        ----------`.trim())
 
-        resolve(data)
+        resolve(data.preco)
     })
 }
 
