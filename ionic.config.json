@@ -1,0 +1,7 @@
+{
+  "name": "carica",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
