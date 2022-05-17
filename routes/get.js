@@ -1,10 +1,12 @@
 const express = require('express')
 const router = express.Router()
+const controller = require('../controllers/beer')
+
 
 // parse from url and selector
-router.get('/all/superbock', (req, res) => {
+router.get('/all', (req, res) => {
 
-    res.status(SUCCESS).send(superbock)
+    controller.getAll(req, res)
 
 })
 

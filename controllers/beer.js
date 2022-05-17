@@ -15,4 +15,20 @@ const create = (req, res) => {
 
 }
 
+const getAll = (req, res) => {
+
+
+    Beer.find(function(err, beers) {
+        if (err) {
+            res.status(400).send(err)
+        }
+
+        console.log(beers);
+
+        res.status(200).json(beers)
+    })
+
+}
+
 exports.create = create
+exports.getAll = getAll

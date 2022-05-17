@@ -8,9 +8,10 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const PORT = process.env.PORT || 3000
-const helpers = require('./helpers.js')
+const cors = require('cors')
 
 // load configs
+app.use(cors())
 app.use(express.json())
 require('dotenv').config()
 
@@ -24,7 +25,7 @@ db.once('open', function() {
 
 // load routes
 app.use('/new', require('./routes/new.js'))
-app.use('/all', require('./routes/get.js'))
+app.use('/get', require('./routes/get.js'))
 
 
 
