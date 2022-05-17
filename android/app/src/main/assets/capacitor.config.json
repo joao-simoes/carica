@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "carica",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
